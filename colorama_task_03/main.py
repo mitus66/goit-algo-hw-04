@@ -4,19 +4,11 @@ from colorama import Fore, Style, init
 import os
 
 def visualize_directory_structure(directory_path):
-    """
-    Візуалізує структуру директорії, виводячи імена піддиректорій та файлів
-    з використанням кольорів.
-
-    Args:
-        directory_path (str): Шлях до директорії.
-    """
     init(autoreset=True)  # Ініціалізація colorama для автоматичного скидання кольору
-
     path = Path(directory_path)
 
     if not path.exists():
-        print(Fore.RED + f"Помилка: Директорія '{directory_path}' не існує.")
+        print(Fore.RED + f"Помилка: директорія '{directory_path}' не існує.")
         return
 
     if not path.is_dir():
